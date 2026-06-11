@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>R-PHONE V3 Component List V2</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@500;700&display=swap');
+:root{
+--bg:#080c10;--panel:#101620;--panel2:#141c28;--border:#1a2838;
+--accent:#00d4ff;--green:#00ff9d;--warn:#ffaa00;--text:#a8c4d6;--head:#e6f5ff;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:Rajdhani,sans-serif;margin:0;padding:20px}
+body:before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,.015) 2px,rgba(255,255,255,.015) 4px);pointer-events:none}
+.wrap{max-width:900px;margin:auto}
+.header{padding:20px;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+h1{font-family:'Share Tech Mono',monospace;margin:0;color:var(--head)}
+h1 span{color:var(--accent)}
+.stats{display:flex;gap:10px;margin-top:15px}
+.stat{flex:1;background:var(--panel2);padding:10px;border-radius:8px;text-align:center}
+.search{width:100%;padding:14px;background:#111923;border:1px solid var(--border);border-radius:8px;color:#fff;margin:20px 0}
+.section{margin:20px 0 10px;font-family:'Share Tech Mono';color:var(--accent);letter-spacing:3px}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden}
+.card-header{padding:15px;display:flex;justify-content:space-between;cursor:pointer}
+.card:hover{border-color:var(--accent)}
+.card-content{display:none;padding:15px;border-top:1px solid var(--border)}
+.card.active .card-content{display:block}
+.arrow{color:var(--accent);transition:.3s}
+.card.active .arrow{transform:rotate(180deg)}
+.btn{display:inline-block;padding:10px 14px;background:var(--accent);color:#000;text-decoration:none;border-radius:6px;font-weight:bold;margin:3px}
+.badge{padding:3px 8px;border-radius:4px;font-size:11px}
+.ready{background:rgba(0,255,157,.15);color:var(--green)}
+.update{background:rgba(255,170,0,.15);color:var(--warn)}
+.copy{background:#233241;color:#fff;border:none;padding:10px 14px;border-radius:6px;cursor:pointer}
+.footer{text-align:center;margin-top:20px;color:#6e8ea3}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="header">
+<h1>R-PHONE <span>V3</span> COMPONENT LIST</h1>
+<p>WaveID Project • Offline Catalog</p>
+<div class="stats">
+<div class="stat"><b>2</b><br>KONTAK ADMIN</div>
+<div class="stat"><b>3</b><br>INFO SOFTWARE</div>
+<div class="stat"><b>21</b><br>KOMPONEN</div>
+<div class="stat"><b>5</b><br>KATEGORI</div>
+</div>
+</div>
+
+<input class="search" id="search" placeholder="Cari komponen...">
+
+<div class="section">SOFTWARE</div>
+<div class="card"><div class="card-header" onclick="toggle(this)"><div>FIRMWARE 22 LATEST<span class="badge ready">WAJIB</span></div><div class="arrow">▼</div></div><div class="card-content"><a class="btn" href="https://drive.google.com/file/d/1fTlPsfRTrNQwcJ5kAylbKs1ETGQj-gqN/view?fbclid=IwY2xjawSTHJ1leHRuA2FlbQIxMABicmlkETFGbXlkZDBlSE5FeTVOV1hSc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHqUkFm6-UKS1dLrM_IPmzcIRrU1WmheDLjB3Paa2xhbHKbGotqwHhCcNCcJ5_aem_eFwK6S4myi4LZkEF5RfZmg">UNDUH</a></div></div>
+<div class="card"><div class="card-header" onclick="toggle(this)"><div>APLIKASI PC <span class="badge ready">WAJIB</span></div><div class="arrow">▼</div></div><div class="card-content"><a class="btn" href="https://mega.nz/file/VZ0SWCZJ#rhZoS_SLIMHrzgKU76Ii0_bANuOQ4Y9SyZReDHjkYH4">UNDUH</a></div></div>
+<div class="card"><div class="card-header" onclick="toggle(this)"><div>APLIKASI ANDROID <span class="badge ready">WAJIB</span></div><div class="arrow">▼</div></div><div class="card-content"><a class="btn" href="https://drive.google.com/file/d/1B7Dh_SSyxhSbXk8zU--iBru6d2t9K7H3/view?fbclid=IwY2xjawSTHatleHRuA2FlbQIxMABicmlkETFGbXlkZDBlSE5FeTVOV1hSc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHgm6B6gIN6RaF8F75zYLGPQiZZc2Bw_MrlzmXdEyuqLOx4tmBtpwRHl9qktv_aem_0F72n2B3yQ2rAGG71dIQxQ">UNDUH</a></div></div>
+
+<div class="section">AKTIVASI</div>
+
+<div class="card"><div class="card-header" onclick="toggle(this)"><div>REGISTRASI ADMIN<span class="badge ready">GRATIS</div><div class="arrow">▼</div></div><div class="card-content"><a class="btn" href="https://wa.me/6282175988678">ERIC</a><a class="btn" href="https://wa.me/6282122012947">WILDAN</a></div></div>
+
+<div class="section">KOMPONEN UTAMA</div>
+
+<div class="card"><div class="card-header" onclick="toggle(this)"><div>ESP32 DevKit 38-pin <span class="badge ready">WAJIB</span></div><div class="arrow">▼</div></div><div class="card-content"><a class="btn" href="https://id.shp.ee/PB1FYzZw">BELI</a></div></div>
+<div class="card"><div class="card-header" onclick="toggle(this)"><div>INA3221  <span class="badge ready">WAJIB</span></div><div class="arrow">▼</div></div><div class="card-content">Link akan diupdate.</div></div>
+<div class="card"><div class="card-header" onclick="toggle(this)"><div>ADS1115 <span class="badge ready">WAJIB</span></div><div class="arrow">▼</div></div><div class="card-content"><a class="btn" href="https://id.shp.ee/fmEE7ZaE">BELI</a></div></div>
+<div class="card"><div class="card-header" onclick="toggle(this)"><div>XL4016 10A <span class="badge ready">WAJIB</div><div class="arrow">▼</div></div><div class="card-content"><a class="btn" href="https://id.shp.ee/dxABZY5T">LINK 1⭐</a><a class="btn" href="https://id.shp.ee/guQiPvzz">LINK 2</a></div></div>
+<div class="card"><div class="card-header" onclick="toggle(this)"><div>Modul Relay Single Channel 12V (2 pcs) <span class="badge ready">WAJIB</div><div class="arrow">▼</div></div><div class="card-content"><a class="btn" href=https://id.shp.ee/J8CcX4KN">BELI</a></div></div><div 
+<div class="card"><div class="card-header" onclick="toggle(this)"><div>Mini560 <span class="badge ready">WAJIB</span></div><div class="arrow">▼</div></div><div class="card-content"><a class="btn" href="https://id.shp.ee/CXVowJGy">BELI</a></div></div>
+<div class="card"><div class="card-header" onclick="toggle(this)"><div>Modul MOSFET EWR27 LR7843 <span class="badge ready">WAJIB</span></div><div class="arrow">▼</div></div><div class="card-content"><a class="btn" href="https://id.shp.ee/c8yJdDvf">BELI</a></div></div>
+<div class="card"><div class="card-header" onclick="toggle(this)"><div>Modul Fast Charging <span class="badge ready">WAJIB</span></div><div class="arrow">▼</div></div><div class="card-content"><a class="btn" href="https://id.shp.ee/Ce2pnX3E">BELI</a></div></div>
+<div class="card"><div class="card-header" onclick="toggle(this)"><div>Level Shifter I2C 5V ↔ 3.3V <span class="badge ready">WAJIB</span></div><div class="arrow">▼</div></div><div class="card-content"><a class="btn" href="https://id.shp.ee/3cPCmtp6">BELI</a></div></div>
+<div class="card"><div class="card-header" onclick="toggle(this)"><div>AMS1117 1.8V <span class="badge ready">WAJIB</span></div><div class="arrow">▼</div></div><div class="card-content"><a class="btn" href="https://id.shp.ee/v8LN7QzL">BELI</a></div></div>
+
+<div class="section">KOMPONEN PENDUKUNG</div>
+
+<div class="card"><div class="card-header" onclick="toggle(this)"><div>Jack Banana (3 Set) <span class="badge ready">WAJIB</span></div><div class="arrow">▼</div></div><div class="card-content"><a class="btn" href="https://id.shp.ee/T7DDaAjH">BELI</a></div></div>
+<div class="card"><div class="card-header" onclick="toggle(this)"><div>Button Reset ESP32 <span class="badge update">OPSIONAL</span></div><div class="arrow">▼</div></div><div class="card-content"><a class="btn" href="https://id.shp.ee/NXViL7Us">BELI</a></div></div>
+<div class="card"><div class="card-header" onclick="toggle(this)"><div>Adaptor 12V Minimal 5A <span class="badge ready">WAJIB</span></div><div class="arrow">▼</div></div><div class="card-content"><a class="btn" href="https://id.shp.ee/Sru676XS">BELI</a></div></div>
+
+<div class="section">KOMPONEN PASSSIVE</div>
+
+<div class="card"><div class="card-header" onclick="toggle(this)"><div>Buzzer Passive <span class="badge ready">WAJIB</span></div><div class="arrow">▼</div></div><div class="card-content"><a class="btn" href="https://id.shp.ee/n4tVUGjq">BELI</a></div></div>
+<div class="card"><div class="card-header" onclick="toggle(this)"><div>Resistor 4,7K <span class="badge ready">WAJIB</span></div><div class="arrow">▼</div></div><div class="card-content"><a class="btn" href="https://id.shp.ee/qzKjXgsc">BELI</a></div></div>
+<div class="card"><div class="card-header" onclick="toggle(this)"><div>Resistor 470K <span class="badge ready">WAJIB</span></div><div class="arrow">▼</div></div><div class="card-content"><a class="btn" href="https://id.shp.ee/Kfgu7ao7">BELI</a></div></div>
+<div class="card"><div class="card-header" onclick="toggle(this)"><div>Kapasitor 100nF MKM/MKV <span class="badge ready">WAJIB</span> <span class="badge update">SALAH 1</span></div><div class="arrow">▼</div></div><div class="card-content"><a class="btn" href="https://id.shp.ee/cn3WJhGn">LINK 1⭐</a><a class="btn" href="https://id.shp.ee/8JfNeEtZ">LINK 2</a></div></div>
+<div class="card"><div class="card-header" onclick="toggle(this)"><div>Rshunt 0.01Ω <span class="badge ready">WAJIB</span> <span class="badge update">PENGGANTI R INA</span></div><div class="arrow">▼</div></div><div class="card-content"><a class="btn" href="https://id.shp.ee/PB5tGyWF">BELI</a></div></div>
+<div class="card"><div class="card-header" onclick="toggle(this)"><div>Resistor 7.5K (3 pcs) <span class="badge ready">WAJIB</span></div><div class="arrow">▼</div></div><div class="card-content"><a class="btn" href="https://id.shp.ee/nfuFct8o">BELI</a></div></div>
+<div class="card"><div class="card-header" onclick="toggle(this)"><div>Resistor 30K (3 pcs) <span class="badge ready">WAJIB</span></div><div class="arrow">▼</div></div><div class="card-content"><a class="btn" href="https://id.shp.ee/btxFv6k1">BELI</a></div></div>
+
+<div class="footer">R-PHONE V3</div>
+</div>
+<script>
+function toggle(el){
+document.querySelectorAll('.card').forEach(c=>{if(c!==el.parentElement)c.classList.remove('active')});
+el.parentElement.classList.toggle('active');
+}
+document.getElementById('search').addEventListener('keyup',function(){
+let f=this.value.toLowerCase();
+document.querySelectorAll('.card').forEach(c=>{
+c.style.display=c.innerText.toLowerCase().includes(f)?'block':'none';
+});
+});
+</script>
+</body></html>
