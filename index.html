@@ -70,7 +70,6 @@ body {
   text-align: center;
 }
 
-/* Gaya Gambar */
 .waveid-img {
   width: 100%;
   max-width: 650px;
@@ -80,9 +79,11 @@ body {
   display: block;
   box-shadow: 0 0 25px rgba(0, 180, 255, 0.3), 0 0 35px rgba(123, 47, 253, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  background: #151b30;
-  min-height: 200px;
   object-fit: contain;
+  /* Pengaturan biar gambar tajam maksimal */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
 }
 
 .header::before {
@@ -369,13 +370,12 @@ h1 span {
 <body>
 <div class="wrap">
   <div class="header">
-    <!-- Format link Google Drive yang sudah diperbaiki -->
+    <!-- Link gambar baru dari Postimg (kualitas asli & tajam) -->
     <img 
-      src="https://drive.google.com/uc?export=view&id=1_ZtGwzKfD_zZByvdFxEKeSEiWmyz3Jk7" 
-      alt="WaveID Power Supply" 
+      src="https://i.postimg.cc/QNYw0rds/IMG-20260624-224316.jpg" 
+      alt="WaveID R-PHONE V3" 
       class="waveid-img"
       loading="lazy"
-      onerror="this.onerror=null; this.src=''; this.alt='Gambar tidak dapat dimuat, silakan simpan gambar secara lokal';"
     >
 
     <h1>R-PHONE <span>V3</span> COMPONENT LIST</h1>
@@ -389,7 +389,6 @@ h1 span {
 
   <input class="search" id="search" placeholder="🔍 Cari nama komponen atau informasi...">
 
-  <!-- Konten sama seperti sebelumnya -->
   <div class="section">PUSAT INFORMASI</div>
   <div class="card">
     <div class="card-header" onclick="toggle(this)">
