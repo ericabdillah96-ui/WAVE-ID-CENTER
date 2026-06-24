@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>R-PHONE V3 Component List V2</title>
+<title>WAVE-ID PROJECT BY R-PHONE</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap');
 
@@ -80,7 +80,6 @@ body {
   box-shadow: 0 0 25px rgba(0, 180, 255, 0.3), 0 0 35px rgba(123, 47, 253, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.15);
   object-fit: contain;
-  /* Pengaturan biar gambar tajam maksimal */
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
   -ms-interpolation-mode: nearest-neighbor;
@@ -224,6 +223,41 @@ h1 span {
   box-shadow: var(--shadow-md);
   transform: translateY(-1px);
 }
+
+/* ====== STYLE KHUSUS UNTUK KOTAK DONASI ====== */
+.card.donasi {
+  background: linear-gradient(145deg, #121832, #0e132a);
+  border-color: var(--accent);
+  text-align: center;
+}
+
+.card.donasi .card-content {
+  display: block;
+  padding: 24px;
+  border: none;
+  background: transparent;
+}
+
+.donasi-text {
+  font-size: 16px;
+  color: var(--text-medium);
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.btn.donasi {
+  background: var(--accent-gradient);
+  box-shadow: 0 0 12px rgba(157, 78, 221, 0.4);
+  font-size: 17px;
+  padding: 12px 28px;
+  margin: 0 auto;
+}
+
+.btn.donasi:hover {
+  background: linear-gradient(135deg, #6b28e0, #b050ee);
+  box-shadow: 0 0 18px rgba(157, 78, 221, 0.55);
+}
+/* ============================================ */
 
 .card-header {
   padding: 20px 24px;
@@ -370,7 +404,6 @@ h1 span {
 <body>
 <div class="wrap">
   <div class="header">
-    <!-- Link gambar baru dari Postimg (kualitas asli & tajam) -->
     <img 
       src="https://i.postimg.cc/QNYw0rds/IMG-20260624-224316.jpg" 
       alt="WaveID R-PHONE V3" 
@@ -378,10 +411,10 @@ h1 span {
       loading="lazy"
     >
 
-    <h1>R-PHONE <span>V3</span> COMPONENT LIST</h1>
-    <p>WaveID Project • Alat Service HP Profesional</p>
+    <h1>WAVE-ID </span> COMPONENT LIST</h1>
+    <p>SMART ANALYZER, MULTI METER & USB SCHEMATIC</p>
     <div class="stats">
-      <div class="stat"><b>2</b>KONTAK ADMIN</div>
+      <div class="stat"><b>1</b>LINK AKTIVASI</div>
       <div class="stat"><b>21</b>KOMPONEN</div>
       <div class="stat"><b>5</b>KATEGORI</div>
     </div>
@@ -403,6 +436,16 @@ h1 span {
     </div>
   </div>
 
+  <!-- KOTAK DONASI SUDAH DIPERBAIKI -->
+  <div class="card donasi">
+    <div class="card-content">
+      <p class="donasi-text">
+        Bagi yang merasa proyek ini bermanfaat dan ingin mendukung pengembangannya, silakan berdonasi. Dukungan Anda sangat kami hargai.
+      </p>
+      <a class="btn donasi" href="https://trakteer.id/Waveid_project" target="_blank">DONASI KESINI</a>
+    </div>
+  </div>
+  
   <div class="section">AKTIVASI</div>
   <div class="card">
     <div class="card-header" onclick="toggle(this)">
@@ -602,7 +645,7 @@ h1 span {
     </div>
   </div>
 
-  <div class="footer">© 2026 R-PHONE V3 | WaveID Project • Semua Hak Dilindungi</div>
+  <div class="footer">© 2026 R-PHONE | WaveID Project •</div>
 </div>
 
 <script>
