@@ -8,7 +8,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap');
 
 :root {
-  /* TEMA GELAP NEON SESUAI GAMBAR */
   --bg: #0a0e17;
   --bg-gradient: linear-gradient(135deg, #050814 0%, #0b1020 50%, #121830 100%);
   --panel: #0f1424;
@@ -59,7 +58,6 @@ body {
   margin: 0 auto;
 }
 
-/* Header */
 .header {
   padding: 32px 28px;
   border-radius: 20px;
@@ -72,7 +70,7 @@ body {
   text-align: center;
 }
 
-/* Gambar WaveID */
+/* Gaya Gambar */
 .waveid-img {
   width: 100%;
   max-width: 650px;
@@ -82,6 +80,9 @@ body {
   display: block;
   box-shadow: 0 0 25px rgba(0, 180, 255, 0.3), 0 0 35px rgba(123, 47, 253, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #151b30;
+  min-height: 200px;
+  object-fit: contain;
 }
 
 .header::before {
@@ -172,7 +173,6 @@ h1 span {
   text-shadow: 0 0 8px rgba(0, 180, 255, 0.3);
 }
 
-/* Search Box */
 .search {
   width: 100%;
   padding: 16px 20px;
@@ -193,7 +193,6 @@ h1 span {
   box-shadow: 0 0 0 4px rgba(0, 180, 255, 0.18);
 }
 
-/* Section Title */
 .section {
   margin: 36px 0 18px;
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -209,7 +208,6 @@ h1 span {
   text-shadow: 0 0 10px rgba(0, 180, 255, 0.3);
 }
 
-/* Card Component */
 .card {
   background: var(--panel);
   border: 1px solid var(--border);
@@ -244,7 +242,6 @@ h1 span {
   background: linear-gradient(145deg, #151b36, #0f142c);
 }
 
-/* Toggle Button */
 .toggle-btn {
   width: 36px;
   height: 36px;
@@ -281,17 +278,10 @@ h1 span {
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Buttons */
 .btn {
   display: inline-block;
   padding: 11px 20px;
@@ -333,7 +323,6 @@ h1 span {
   box-shadow: 0 0 16px rgba(37, 211, 102, 0.45);
 }
 
-/* Badges */
 .badge {
   display: inline-block;
   padding: 5px 12px;
@@ -365,7 +354,6 @@ h1 span {
   line-height: 1.7;
 }
 
-/* Footer */
 .footer {
   text-align: center;
   margin-top: 48px;
@@ -381,12 +369,13 @@ h1 span {
 <body>
 <div class="wrap">
   <div class="header">
-    <!-- Gambar WaveID dari link Google Drive -->
+    <!-- Format link Google Drive yang sudah diperbaiki -->
     <img 
       src="https://drive.google.com/uc?export=view&id=1_ZtGwzKfD_zZByvdFxEKeSEiWmyz3Jk7" 
       alt="WaveID Power Supply" 
       class="waveid-img"
       loading="lazy"
+      onerror="this.onerror=null; this.src=''; this.alt='Gambar tidak dapat dimuat, silakan simpan gambar secara lokal';"
     >
 
     <h1>R-PHONE <span>V3</span> COMPONENT LIST</h1>
@@ -400,7 +389,7 @@ h1 span {
 
   <input class="search" id="search" placeholder="🔍 Cari nama komponen atau informasi...">
 
-  <!-- PUSAT INFORMASI -->
+  <!-- Konten sama seperti sebelumnya -->
   <div class="section">PUSAT INFORMASI</div>
   <div class="card">
     <div class="card-header" onclick="toggle(this)">
@@ -410,7 +399,6 @@ h1 span {
     <div class="card-content">
       <p class="info-text">Untuk link download aplikasi PC, Android & firmware versi terbaru, silakan bergabung melalui channel resmi di bawah ini:</p>
       <a class="btn telegram" href="https://t.me/waveid_project" target="_blank">📲 BUKA CHANNEL TELEGRAM</a>
-
       <p class="info-text" style="margin-top: 20px;">Untuk belajar cara perakitan, panduan lengkap, dan informasi terbaru lainnya, silakan masuk ke grup diskusi:</p>
       <a class="btn whatsapp" href="https://chat.whatsapp.com/HUoUZst6V7I5GOAQFnGmJg?s=cl&p=a&ilr=0" target="_blank">💬 BUKA GRUP WHATSAPP</a>
     </div>
@@ -615,7 +603,7 @@ h1 span {
     </div>
   </div>
 
-  <div class="footer">© 2026 R-PHONE V3 | WaveID Project</div>
+  <div class="footer">© 2026 R-PHONE V3 | WaveID Project • Semua Hak Dilindungi</div>
 </div>
 
 <script>
