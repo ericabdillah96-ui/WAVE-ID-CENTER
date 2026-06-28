@@ -208,6 +208,31 @@ h1 span {
   text-shadow: 0 0 10px rgba(0, 180, 255, 0.3);
 }
 
+/* Style untuk kotak perhatian baru */
+.notice-box {
+  background: var(--panel-soft);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 28px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(251, 191, 36, 0.15);
+}
+
+.notice-box h4 {
+  color: var(--warning);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.notice-box p {
+  color: var(--text-medium);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
 .card {
   background: var(--panel);
   border: 1px solid var(--border);
@@ -388,6 +413,15 @@ h1 span {
   <input class="search" id="search" placeholder="🔍 Cari nama komponen atau informasi...">
 
   <div class="section">PUSAT INFORMASI</div>
+
+  <!-- Kotak perhatian baru -->
+  <div class="notice-box">
+    <h4>PERHATIAN</h4>
+    <p>SEMUA LIST KOMPONEN YANG ADA DI SINI SIFATNYA HANYA REFRENSI ATAU ACUAN TIDAK PERLU BELI DI LINK YANG TERDAFTAR.<br>
+    SEMUA LIST YANG ADA HANYA UNTUK MEMPERMUDAH PENCARIAN KOMPONEN.<br>
+    TERIMAKASIH</p>
+  </div>
+
   <div class="card">
     <div class="card-header" onclick="toggle(this)">
       <div>AKSES FILE & GRUP DISKUSI <span class="badge ready">RESMI</span></div>
