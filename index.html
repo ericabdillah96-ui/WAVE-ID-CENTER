@@ -324,21 +324,41 @@ h1 span {
       <div>ESP32 DevKit 38-pin <span class="badge ready">WAJIB</span></div>
       <div class="toggle-btn">+</div>
     </div>
-    <div class="card-content"><a class="btn" href="https://id.shp.ee/PB1FYzZw" target="_blank">BELI</a></div>
+    <div class="card-content">
+      <p class="info-text" style="color: white; font-weight: 500;">✅ Modul ESP32 Devkit 38 Pin berfungsi sebagai pusat pengendali utama dan pemroses data keseluruhan sistem.
+Modul ini menerima data hasil pengukuran tegangan dan arus dari INA3221, serta sinyal ukur presisi dari ADS1115. Seluruh data tersebut kemudian diproses, dihitung, dan dikonversi menjadi nilai yang mudah dibaca. Selain itu, ESP32 juga berperan mengatur tampilan pada layar, memproses input dari tombol kendali, serta dapat mengirimkan data secara nirkabel jika dibutuhkan. Dengan jumlah pin yang lengkap, modul ini mampu terhubung ke semua komponen pendukung sekaligus tanpa kendala keterbatasan jalur.</p>
+<p class="info-text" style="color: var(--warning); font-weight: 500;">⚠️ Peringatan Penting:
+Modul ESP32 sangat sensitif dan hanya dirancang untuk tegangan kerja maksimal 3,3V. Tegangan di atas 5V dapat merusak modul secara permanen. Oleh karena itu, berhati-hatilah saat melakukan pengukuran arus, penyambungan jalur, maupun proses penyolderan agar tidak terjadi kesalahan pemasangan atau lonjakan tegangan yang berlebihan.</p>      
+<a class="btn" href="https://id.shp.ee/PB1FYzZw" target="_blank">BELI</a></div>
   </div>
   <div class="card">
     <div class="card-header" onclick="toggleCard(this)">
       <div>INA3221 <span class="badge ready">WAJIB</span></div>
       <div class="toggle-btn">+</div>
     </div>
-    <div class="card-content"><a class="btn" href="https://shopee.co.id/product/173815522/53011902805" target="_blank">BELI</a></div>
+    <div class="card-content">
+      <p class="info-text" style="color: white; font-weight: 500;">✅Modul INA3221 adalah sensor pemantau daya 3 saluran yang berfungsi mengukur tegangan dan arus secara bersamaan pada ketiga jalur yang ditentukan. Pada sistem ini
+<p class="info-text" style="color: white; font-weight: 500;">✅saluran 1 dipasang pada jalur sirkuit USB</p> 
+<p class="info-text" style="color: white; font-weight: 500;">✅saluran 2 pada jalur power suplay utama</p> 
+<p class="info-text" style="color: white; font-weight: 500;">✅saluran 3 pada jalur pengukur avometer</p> 
+<p class="info-text" style="color: white; font-weight: 500;">sehingga kondisi kerja masing-masing bagian dapat dipantau secara terpisah dan akurat.</p>
+      <p class="info-text" style="color: white; font-weight: 500;">⚠️Modifikasi Nilai Resistor Shunt pada Modul INA3221
+Pada modul INA3221 dilakukan penyesuaian komponen resistor shunt untuk meningkatkan akurasi pengukuran arus, dengan rincian sebagai berikut :</p>
+<p class="info-text" style="color: white; font-weight: 500;">Pada ketiga saluran (CH1, CH2, dan CH3), resistor shunt yang semula bernilai R100 (100 mΩ) diubah menjadi R010 (10 mΩ), dengan toleransi presisi 1% dan ukuran fisik tipe SMD 0805.</p>
+<p class="info-text" style="color: white; font-weight: 500;">Khusus pada Saluran 2 (CH2), resistor pendamping nilai kecil yang terpasang juga diganti menjadi R010 yang sama. Jika komponen pengganti tidak tersedia, jalur resistor tersebut dapat dijumper langsung sebagai solusi alternatif agar rangkaian tetap terhubung.
+Perubahan ini dilakukan agar batas ukur arus menjadi lebih besar, hasil pengukuran lebih stabil, dan sesuai dengan kebutuhan beban pada sirkuit USB, catu daya, serta jalur ukur avometer.</p>
+      <a class="btn" href="https://shopee.co.id/product/173815522/53011902805" target="_blank">BELI</a></div>
   </div>
   <div class="card">
     <div class="card-header" onclick="toggleCard(this)">
       <div>ADS1115 <span class="badge ready">WAJIB</span></div>
       <div class="toggle-btn">+</div>
     </div>
-    <div class="card-content"><a class="btn" href="https://id.shp.ee/fmEE7ZaE" target="_blank">BELI</a></div>
+    <div class="card-content">
+      <p class="info-text" style="color: white; font-weight: 500;">✅Modul ADS1115 berfungsi sebagai jembatan pengolah sinyal agar sistem dapat bekerja layaknya alat ukur multimeter.
+Alat ini mengubah sinyal tegangan analog dari probe ukur menjadi data digital yang presisi, sehingga mikrokontroler dapat membaca, memproses, dan menampilkan hasil pengukuran dengan akurat — mirip seperti cara kerja multimeter, namun dengan ketelitian yang jauh lebih tinggi.
+</p>
+      <a class="btn" href="https://id.shp.ee/fmEE7ZaE" target="_blank">BELI</a></div>
   </div>
   <div class="card">
     <div class="card-header" onclick="toggleCard(this)">
@@ -346,6 +366,8 @@ h1 span {
       <div class="toggle-btn">+</div>
     </div>
     <div class="card-content">
+<p class="info-text" style="color: white; font-weight: 500;">✅Modul XL4016 10A berfungsi khusus sebagai rangkaian penurun tegangan untuk kebutuhan catu daya.
+Modul ini hanya bertugas mengubah tegangan masuk menjadi tegangan keluar yang stabil sesuai kebutuhan daya. Sangat disarankan menggunakan varian berkapasitas 10A agar mampu menyuplai arus yang cukup besar dan stabil, sehingga pasokan daya berjalan lancar tanpa gangguan.</p>
       <a class="btn" href="https://id.shp.ee/dxABZY5T" target="_blank">LINK 1 ⭐</a>
       <a class="btn" href="https://id.shp.ee/guQiPvzz" target="_blank">LINK 2</a>
     </div>
@@ -355,7 +377,12 @@ h1 span {
       <div>Modul Relay Single Channel 12V (2 pcs) <span class="badge ready">WAJIB</span></div>
       <div class="toggle-btn">+</div>
     </div>
-    <div class="card-content"><a class="btn" href="https://id.shp.ee/J8CcX4KN" target="_blank">BELI</a></div>
+    <div class="card-content">
+<p class="info-text" style="color: white; font-weight: 500;">✅ Modul Relay Saluran Tunggal 12V berfungsi sebagai saklar kendali berdaya tinggi yang diatur secara elektronik.
+Alat ini bekerja seperti saklar biasa, namun pembukaan dan penutupan jalur arus dikendalikan oleh sinyal kecil dari mikrokontroler. Pada sistem ini digunakan sebanyak 2 buah modul, dengan tugas pelindung masing-masing sebagai berikut:</p>
+<p class="info-text" style="color: white; font-weight: 500;">✅Modul Pertama: Berfungsi sebagai pelindung jalur catu daya, memutus aliran listrik secara otomatis jika terdeteksi kondisi berbahaya agar kerusakan tidak menyebar ke seluruh rangkaian.</p>
+<p class="info-text" style="color: white; font-weight: 500;">✅Modul Kedua: Berfungsi sebagai pelindung pada mode kerja avometer, memutus jalur ukur secara otomatis jika terjadi kesalahan pemasangan atau lonjakan arus berlebih.</p>
+<a class="btn" href="https://id.shp.ee/J8CcX4KN" target="_blank">BELI</a></div>
   </div>
   <div class="card">
     <div class="card-header" onclick="toggleCard(this)">
