@@ -1,39 +1,565 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sedang Dalam Perbaikan</title>
-  <style>
-    *{margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif;}
-    body{
-      background:#050814;
-      color:#ddd;
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:20px;
-    }
-    .kotak{
-      background:#0f1424;
-      padding:40px 25px;
-      border-radius:12px;
-      max-width:450px;
-      width:100%;
-      border:1px solid #2a324a;
-    }
-    .ikon{font-size:50px; margin-bottom:15px;}
-    h2{margin-bottom:10px; color:#fff;}
-    p{font-size:16px; line-height:1.6;}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WAVE-ID PROJECT BY R-PHONE</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap');
+
+:root {
+  --bg: #050814;
+  --bg-gradient: linear-gradient(135deg, #050814 0%, #0b1020 50%, #121830 100%);
+  --panel: #0f1424;
+  --panel-soft: linear-gradient(145deg, #151b30, #0e1326);
+  --border: #222b45;
+  --accent: #9d4edd;
+  --accent-gradient: linear-gradient(135deg, #7b2ffd 0%, #c061ff 100%);
+  --accent-light: rgba(157, 78, 221, 0.15);
+  --glow-ungu: rgba(157, 78, 221, 0.4);
+  --glow-ungu-strong: rgba(157, 78, 221, 0.6);
+  --success: #22d3ee;
+  --success-light: rgba(34, 211, 238, 0.15);
+  --warning: #fbbf24;
+  --warning-light: rgba(251, 191, 36, 0.15);
+  --text-main: #f0f4ff;
+  --text-medium: #c7d2fe;
+  --text-light: #94a3b8;
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 28px rgba(123, 47, 253, 0.2);
+  --glow-ambient: 0 0 18px var(--glow-ungu), 0 0 35px rgba(157, 78, 221, 0.18);
+  --glow-ambient-hover: 0 0 25px var(--glow-ungu-strong), 0 0 50px rgba(157, 78, 221, 0.28);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-gradient);
+  color: var(--text-medium);
+  font-family: 'Inter', sans-serif;
+  padding: 24px 16px;
+  line-height: 1.7;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Garis belakang */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(to right, rgba(157, 78, 221, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(157, 78, 221, 0.06) 1px, transparent 1px),
+    linear-gradient(45deg, rgba(157, 78, 221, 0.03) 1px, transparent 1px);
+  background-size: 80px 80px, 80px 80px, 120px 120px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.wrap {
+  max-width: 920px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  padding: 32px 28px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #0e142b 0%, #131a35 50%, #0a0f22 100%);
+  box-shadow: var(--shadow-lg), var(--glow-ambient);
+  margin-bottom: 28px;
+  border: 1px solid var(--accent);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.header:hover {
+  box-shadow: var(--shadow-lg), var(--glow-ambient-hover);
+}
+
+.waveid-img {
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  border-radius: 16px;
+  margin: 0 auto 24px;
+  display: block;
+  box-shadow: 0 0 25px rgba(157, 78, 221, 0.35);
+  border: 1px solid rgba(157, 78, 221, 0.3);
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: -50px; right: -50px;
+  width: 220px; height: 220px;
+  background: radial-gradient(circle, rgba(157, 78, 221, 0.22) 0%, transparent 72%);
+  border-radius: 50%; filter: blur(6px);
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: -40px; left: -40px;
+  width: 180px; height: 180px;
+  background: radial-gradient(circle, rgba(37, 184, 255, 0.22) 0%, transparent 72%);
+  border-radius: 50%; filter: blur(6px);
+}
+
+h1 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 32px; font-weight: 700;
+  color: var(--text-main); margin-bottom: 8px; position: relative; z-index: 1;
+}
+h1 span {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 12px rgba(157, 78, 221, 0.4);
+}
+.header p { color: var(--text-light); font-size: 16px; margin-bottom: 22px; position: relative; z-index: 1; }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px; position: relative; z-index: 1;
+}
+.stat {
+  background: var(--panel-soft); padding: 16px 10px; border-radius: 14px;
+  text-align: center; border: 1px solid var(--accent);
+  box-shadow: var(--shadow-sm), 0 0 12px rgba(157, 78, 221, 0.2);
+  transition: all 0.3s ease;
+}
+.stat:hover {
+  border-color: var(--accent); transform: translateY(-2px);
+  box-shadow: var(--shadow-md), 0 0 20px rgba(157, 78, 221, 0.35);
+}
+.stat b {
+  display: block; font-size: 24px; font-weight: 700;
+  background: linear-gradient(135deg, #00b4ff 0%, #3a86ff 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.search {
+  width: 100%; padding: 16px 20px; background: var(--panel);
+  border: 1px solid var(--accent); border-radius: 14px;
+  color: var(--text-main); font-size: 16px; font-family: 'Inter', sans-serif;
+  margin-bottom: 32px; outline: none;
+  box-shadow: var(--shadow-sm), 0 0 12px rgba(157, 78, 221, 0.18);
+  transition: all 0.3s ease;
+}
+.search:focus {
+  box-shadow: 0 0 0 4px rgba(157, 78, 221, 0.18), 0 0 25px rgba(157, 78, 221, 0.3);
+}
+
+.section {
+  margin: 36px 0 18px; font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 20px; font-weight: 700;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  padding-left: 12px; border-left: 4px solid;
+  border-image: var(--accent-gradient) 1;
+}
+
+.notice-box {
+  background: var(--panel-soft); border: 1px solid rgba(251, 191, 36, 0.35);
+  border-radius: 14px; padding: 20px; margin-bottom: 28px; text-align: center;
+  box-shadow: 0 0 12px rgba(251, 191, 36, 0.15);
+}
+.notice-box h4 { color: var(--warning); font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+.notice-box p { color: var(--text-medium); font-size: 15px; line-height: 1.8; }
+
+.card {
+  background: var(--panel); border: 1px solid var(--accent); border-radius: 16px;
+  margin-bottom: 16px; overflow: hidden;
+  box-shadow: var(--shadow-sm), var(--glow-ambient);
+  transition: all 0.3s ease;
+}
+.card:hover {
+  box-shadow: var(--shadow-md), var(--glow-ambient-hover);
+}
+.card.active {
+  box-shadow: var(--shadow-md), 0 0 25px var(--glow-ungu-strong), 0 0 45px rgba(157, 78, 221, 0.3);
+}
+
+.card-header {
+  padding: 20px 24px; display: flex; justify-content: space-between; align-items: center;
+  cursor: pointer; font-size: 18px; font-weight: 600;
+  font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-main);
+  background: var(--panel-soft);
+  transition: background 0.2s ease;
+}
+.card-header:hover { background: linear-gradient(145deg, #151b36, #0f142c); }
+
+.toggle-btn {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--accent-light); color: var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; font-weight: 600;
+  border: none; transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(157, 78, 221, 0.25);
+}
+.card.active .toggle-btn {
+  background: var(--accent-gradient); color: #fff; transform: rotate(180deg);
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.5);
+}
+
+.card-content {
+  display: none; /* AWALNYA TUTUP */
+  padding: 22px 24px; border-top: 1px solid var(--accent);
+  background: linear-gradient(145deg, #0e1326, #131930);
+}
+.card.active .card-content {
+  display: block; /* KALO ADA CLASS ACTIVE BARU MUNCUL */
+  animation: fadeInUp 0.35s ease;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.btn {
+  display: inline-block; padding: 11px 20px;
+  background: var(--accent-gradient); color: #fff;
+  text-decoration: none; border-radius: 10px; font-weight: 600;
+  font-family: 'Inter', sans-serif; margin: 8px 10px 8px 0;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 12px rgba(157, 78, 221, 0.3);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.btn:hover {
+  background: linear-gradient(135deg, #6d28d9, #9333ea);
+  transform: translateY(-2px);
+  box-shadow: 0 0 22px rgba(168, 85, 247, 0.45);
+}
+.btn.telegram { background: linear-gradient(135deg, #0088cc 0%, #25a4e2 100%); }
+.btn.whatsapp { background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); }
+
+.badge {
+  display: inline-block; padding: 5px 12px; border-radius: 10px;
+  font-size: 12px; font-weight: 600; font-family: 'Inter', sans-serif;
+  margin-left: 10px;
+}
+.ready { background: var(--success-light); color: var(--success); border: 1px solid rgba(34,211,238,0.25); }
+.update { background: var(--warning-light); color: var(--warning); border: 1px solid rgba(251,191,36,0.25); }
+
+.info-text { font-size: 16px; color: var(--text-medium); margin-bottom: 16px; line-height: 1.7; }
+
+.footer {
+  text-align: center; margin-top: 48px; padding: 20px;
+  color: var(--text-light); font-size: 15px;
+  border-top: 1px solid var(--accent);
+  background: linear-gradient(145deg, transparent, rgba(157, 78, 221, 0.08));
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(157, 78, 221, 0.15);
+}
+</style>
 </head>
 <body>
-  <div class="kotak">
-    <div class="ikon">🛠️</div>
-    <h2>Sedang Dalam Pemeliharaan</h2>
-    <p>Tunggu update selanjutnya ya...</p>
+<div class="wrap">
+  <div class="header">
+    <img src="https://i.postimg.cc/QNYw0rds/IMG-20260624-224316.jpg" alt="WaveID R-PHONE V3" class="waveid-img" loading="lazy">
+    <h1>WAVE-ID <span>COMPONENT LIST</span></h1>
+    <p>SMART ANALYZER, MULTI METER & USB SCHEMATIC</p>
+    <div class="stats">
+      <div class="stat"><b>1</b>LINK AKTIVASI</div>
+      <div class="stat"><b>21</b>KOMPONEN</div>
+      <div class="stat"><b>5</b>KATEGORI</div>
+    </div>
   </div>
+
+  <input class="search" id="search" placeholder="🔍 Cari nama komponen atau informasi...">
+
+  <div class="section">PUSAT INFORMASI</div>
+  <div class="notice-box">
+    <h4>PERHATIAN</h4>
+    <p>SEMUA LIST KOMPONEN YANG ADA DI SINI SIFATNYA HANYA REFRENSI ATAU ACUAN TIDAK PERLU BELI DI LINK YANG TERDAFTAR.<br>
+    SEMUA LIST YANG ADA HANYA UNTUK MEMPERMUDAH PENCARIAN KOMPONEN.<br>
+    TERIMAKASIH</p>
+  </div>
+
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div>AKSES FILE & GRUP DISKUSI <span class="badge ready">RESMI</span></div>
+      <div class="toggle-btn">+</div>
+    </div>
+    <div class="card-content">
+      <p class="info-text">Untuk link download aplikasi PC, Android & firmware versi terbaru, silakan bergabung melalui channel resmi di bawah ini:</p>
+      <a class="btn telegram" href="https://t.me/waveid_project" target="_blank">📲 BUKA CHANNEL TELEGRAM</a>
+      <p class="info-text" style="margin-top: 20px;">Untuk belajar cara perakitan, panduan lengkap, dan informasi terbaru lainnya, silakan masuk ke grup diskusi:</p>
+      <a class="btn whatsapp" href="https://chat.whatsapp.com/HUoUZst6V7I5GOAQFnGmJg?s=cl&p=a&ilr=0" target="_blank">💬 BUKA GRUP WHATSAPP</a>
+    </div>
+  </div>
+
+  <div class="section">AKTIVASI</div>
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div>REGISTRASI ADMIN <span class="badge ready">GRATIS</span></div>
+      <div class="toggle-btn">+</div>
+    </div>
+    <div class="card-content">
+      <p class="info-text" style="color: var(--warning); font-weight: 500;">⏰ Aktivasi/Registrasi Bisa dilakukan setiap hari pada pukul 19.00 - 00.00</p>
+      <a class="btn" href="https://wa.me/6289510866766?text=User%20%3A%0ANo%20Telp%20%3A%0AHW%20ID%20%3A" target="_blank">DAFTAR SEKARANG</a>
+    </div>
+  </div>
+
+  <div class="section">KOMPONEN UTAMA</div>
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div>ESP32 DevKit 38-pin <span class="badge ready">WAJIB</span></div>
+      <div class="toggle-btn">+</div>
+    </div>
+    <div class="card-content">
+      <p class="info-text" style="color: white; font-weight: 500;">✅ Modul ESP32 Devkit 38 Pin berfungsi sebagai pusat pengendali utama dan pemroses data keseluruhan sistem.
+Modul ini menerima data hasil pengukuran tegangan dan arus dari INA3221, serta sinyal ukur presisi dari ADS1115. Seluruh data tersebut kemudian diproses, dihitung, dan dikonversi menjadi nilai yang mudah dibaca. Selain itu, ESP32 juga berperan mengatur tampilan pada layar, memproses input dari tombol kendali, serta dapat mengirimkan data secara nirkabel jika dibutuhkan. Dengan jumlah pin yang lengkap, modul ini mampu terhubung ke semua komponen pendukung sekaligus tanpa kendala keterbatasan jalur.</p>
+<p class="info-text" style="color: var(--warning); font-weight: 500;">⚠️ Peringatan Penting:
+Modul ESP32 sangat sensitif dan hanya dirancang untuk tegangan kerja maksimal 3,3V. Tegangan di atas 5V dapat merusak modul secara permanen. Oleh karena itu, berhati-hatilah saat melakukan pengukuran arus, penyambungan jalur, maupun proses penyolderan agar tidak terjadi kesalahan pemasangan atau lonjakan tegangan yang berlebihan.</p>      
+<a class="btn" href="https://id.shp.ee/PB1FYzZw" target="_blank">BELI</a></div>
+  </div>
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div>INA3221 <span class="badge ready">WAJIB</span></div>
+      <div class="toggle-btn">+</div>
+    </div>
+    <div class="card-content">
+      <p class="info-text" style="color: white; font-weight: 500;">✅Modul INA3221 adalah sensor pemantau daya 3 saluran yang berfungsi mengukur tegangan dan arus secara bersamaan pada ketiga jalur yang ditentukan. Pada sistem ini
+<p class="info-text" style="color: white; font-weight: 500;">✅saluran 1 dipasang pada jalur sirkuit USB</p> 
+<p class="info-text" style="color: white; font-weight: 500;">✅saluran 2 pada jalur power suplay utama</p> 
+<p class="info-text" style="color: white; font-weight: 500;">✅saluran 3 pada jalur pengukur avometer</p> 
+<p class="info-text" style="color: white; font-weight: 500;">sehingga kondisi kerja masing-masing bagian dapat dipantau secara terpisah dan akurat.</p>
+      <p class="info-text" style="color: white; font-weight: 500;">⚠️Modifikasi Nilai Resistor Shunt pada Modul INA3221
+Pada modul INA3221 dilakukan penyesuaian komponen resistor shunt untuk meningkatkan akurasi pengukuran arus, dengan rincian sebagai berikut :</p>
+<p class="info-text" style="color: white; font-weight: 500;">Pada ketiga saluran (CH1, CH2, dan CH3), resistor shunt yang semula bernilai R100 (100 mΩ) diubah menjadi R010 (10 mΩ), dengan toleransi presisi 1% dan ukuran fisik tipe SMD 0805.</p>
+<p class="info-text" style="color: white; font-weight: 500;">Khusus pada Saluran 2 (CH2), resistor pendamping nilai kecil yang terpasang juga diganti menjadi R010 yang sama. Jika komponen pengganti tidak tersedia, jalur resistor tersebut dapat dijumper langsung sebagai solusi alternatif agar rangkaian tetap terhubung.
+Perubahan ini dilakukan agar batas ukur arus menjadi lebih besar, hasil pengukuran lebih stabil, dan sesuai dengan kebutuhan beban pada sirkuit USB, catu daya, serta jalur ukur avometer.</p>
+      <a class="btn" href="https://shopee.co.id/product/173815522/53011902805" target="_blank">BELI</a></div>
+  </div>
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div>ADS1115 <span class="badge ready">WAJIB</span></div>
+      <div class="toggle-btn">+</div>
+    </div>
+    <div class="card-content">
+      <p class="info-text" style="color: white; font-weight: 500;">✅Modul ADS1115 berfungsi sebagai jembatan pengolah sinyal agar sistem dapat bekerja layaknya alat ukur multimeter.
+Alat ini mengubah sinyal tegangan analog dari probe ukur menjadi data digital yang presisi, sehingga mikrokontroler dapat membaca, memproses, dan menampilkan hasil pengukuran dengan akurat — mirip seperti cara kerja multimeter, namun dengan ketelitian yang jauh lebih tinggi.
+</p>
+      <a class="btn" href="https://id.shp.ee/fmEE7ZaE" target="_blank">BELI</a></div>
+  </div>
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div>XL4016 10A <span class="badge ready">WAJIB</span></div>
+      <div class="toggle-btn">+</div>
+    </div>
+    <div class="card-content">
+<p class="info-text" style="color: white; font-weight: 500;">✅Modul XL4016 10A berfungsi khusus sebagai rangkaian penurun tegangan untuk kebutuhan catu daya.
+Modul ini hanya bertugas mengubah tegangan masuk menjadi tegangan keluar yang stabil sesuai kebutuhan daya. Sangat disarankan menggunakan varian berkapasitas 10A agar mampu menyuplai arus yang cukup besar dan stabil, sehingga pasokan daya berjalan lancar tanpa gangguan.</p>
+      <a class="btn" href="https://id.shp.ee/dxABZY5T" target="_blank">LINK 1 ⭐</a>
+      <a class="btn" href="https://id.shp.ee/guQiPvzz" target="_blank">LINK 2</a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div>Modul Relay Single Channel 12V (2 pcs) <span class="badge ready">WAJIB</span></div>
+      <div class="toggle-btn">+</div>
+    </div>
+    <div class="card-content">
+<p class="info-text" style="color: white; font-weight: 500;">✅ Modul Relay Saluran Tunggal 12V berfungsi sebagai saklar kendali berdaya tinggi yang diatur secara elektronik.
+Alat ini bekerja seperti saklar biasa, namun pembukaan dan penutupan jalur arus dikendalikan oleh sinyal kecil dari mikrokontroler. Pada sistem ini digunakan sebanyak 2 buah modul, dengan tugas pelindung masing-masing sebagai berikut:</p>
+<p class="info-text" style="color: white; font-weight: 500;">✅Modul Pertama: Berfungsi sebagai pelindung jalur catu daya, memutus aliran listrik secara otomatis jika terdeteksi kondisi berbahaya agar kerusakan tidak menyebar ke seluruh rangkaian.</p>
+<p class="info-text" style="color: white; font-weight: 500;">✅Modul Kedua: Berfungsi sebagai pelindung pada mode kerja avometer, memutus jalur ukur secara otomatis jika terjadi kesalahan pemasangan atau lonjakan arus berlebih.</p>
+<a class="btn" href="https://id.shp.ee/J8CcX4KN" target="_blank">BELI</a></div>
+  </div>
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div>Mini 360 <span class="badge ready">WAJIB</span></div>
+      <div class="toggle-btn">+</div>
+    </div>
+    <div class="card-content">
+<p class="info-text" style="color: white; font-weight: 500;">✅ Mini360 DC-DC Buck Converter berfungsi khusus mengubah tegangan masuk menjadi tegangan keluar yang stabil dan pas, hanya untuk menyuplai daya pada modul ESP32.</p>
+<p class="info-text" style="color: white; font-weight: 500;">⚠️Wajib dilakukan pengaturan pada trimpot penyesuaian tegangan, agar nilai tegangan keluaran tidak melebihi 5,1 Volt. Hal ini sangat penting untuk menjaga keamanan dan mencegah kerusakan permanen pada ESP32 yang bersifat sensitif terhadap tegangan berlebih.</p>
+<a class="btn" href="https://shopee.co.id/Mini360-Mini-360-DC-to-DC-Buck-Converter-Step-Down-i.65450634.2177144861" target="_blank">BELI</a></div>
+  </div>
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div>Modul MOSFET EWR27 LR7843 <span class="badge ready">WAJIB</span></div>
+      <div class="toggle-btn">+</div>
+    </div>
+    <div class="card-content">
+<p class="info-text" style="color: white; font-weight: 500;">✅ Berfungsi sebagai saklar daya elektronik yang mengatur aliran arus besar secara otomatis atas perintah dari mikrokontroler.</p>
+<p class="info-text" style="color: white; font-weight: 500;">⚠️Kita hanya butuh MOSFET 3 kaki jenis ini saja, lalu melepasnya secara hati-hati dari modul aslinya, kemudian memasangnya kembali ke PCB Wave ID.</p>
+<a class="btn" href="https://id.shp.ee/c8yJdDvf" target="_blank">BELI</a></div>
+  </div>
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div>Modul Fast Charging <span class="badge ready">WAJIB</span></div>
+      <div class="toggle-btn">+</div>
+    </div>
+    <div class="card-content">
+<p class="info-text" style="color: white; font-weight: 500;">✅ Berfungsi khusus untuk mengisi daya ponsel dengan protokol pengisian cepat. Jalur arusnya dilewatkan terlebih dahulu ke INA3221 agar besar arus pengisian dapat dipantau dan dibaca nilainya secara akurat.</p>
+<a class="btn" href="https://id.shp.ee/Ce2pnX3E" target="_blank">BELI</a>
+<a class="btn" href="https://shopee.co.id/product/204333861/56511517041?d_id=b8e37&uls_trackid=568272g700kr&utm_content=2jQBuHad5QUsiCgGZZtEs4pDDLxX" target="_blank">BELI</a></div>
+  </div>
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div>Level Shifter I2C 5V ↔ 3.3V <span class="badge ready">WAJIB</span></div>
+      <div class="toggle-btn">+</div>
+    </div>
+    <div class="card-content">
+<p class="info-text" style="color: white; font-weight: 500;">✅ Berfungsi menyelaraskan tegangan sinyal komunikasi UART pada mode kerja Wave ID, agar perangkat berlogika 5V dapat bertukar data dengan aman dan lancar bersama ESP32 yang berlogika 3,3V tanpa merusak komponen.</p>
+<a class="btn" href="https://id.shp.ee/3cPCmtp6" target="_blank">BELI</a></div>
+  </div>
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div>AMS1117 1.8V <span class="badge ready">WAJIB</span></div>
+      <div class="toggle-btn">+</div>
+    </div>
+    <div class="card-content">
+<p class="info-text" style="color: white; font-weight: 500;">✅AMS1117-1.8V adalah regulator tegangan linear tipe LDO (Low Dropout) dengan tegangan keluaran tetap 1.8V.</p>
+<a class="btn" href="https://id.shp.ee/v8LN7QzL" target="_blank">BELI</a></div>
+  </div>
+
+  <div class="section">KOMPONEN PENDUKUNG</div>
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div>Jack Banana Female 4mm (3 Set) <span class="badge ready">WAJIB</span></div>
+      <div class="toggle-btn">+</div>
+    </div>
+    <div class="card-content">
+<p class="info-text" style="color: white; font-weight: 500;">✅Jack banana (atau soket pisang) adalah bagian betina dari konektor listrik standar ukuran 4 mm, yang berfungsi menerima colokan pisang untuk menghubungkan kabel ke peralatan secara cepat, aman, dan stabil.</p>
+<a class="btn" href="https://id.shp.ee/T7DDaAjH" target="_blank">BELI</a></div>
+  </div>
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div>Button Reset ESP32 <span class="badge update">OPSIONAL</span></div>
+      <div class="toggle-btn">+</div>
+    </div>
+    <div class="card-content">
+<p class="info-text" style="color: white; font-weight: 500;">✅ ini gunanya untuk mereset esp32, opsional saja.</p>
+<a class="btn" href="https://id.shp.ee/NXViL7Us" target="_blank">BELI</a></div>
+  </div>
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div>Adaptor 12V Minimal 5A <span class="badge ready">WAJIB</span></div>
+      <div class="toggle-btn">+</div>
+    </div>
+    <div class="card-content">
+<p class="info-text" style="color: white; font-weight: 500;">✅Adaptor 12V Minimal 5A: Berfungsi sebagai sumber daya utama yang terhubung langsung ke jala-jala listrik rumah, untuk menyuplai seluruh kebutuhan daya perangkat secara keseluruhan. Sangat disarankan menggunakan varian asli berkapasitas minimal 5A hingga 10A, agar pasokan arus cukup besar, stabil, dan mampu melayani seluruh beban kerja sistem dengan baik tanpa kendala.</p>
+<a class="btn" href="https://id.shp.ee/Sru676XS" target="_blank">BELI</a></div>
+  </div>
+
+  <div class="section">KOMPONEN PASIF</div>
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div>Buzzer Pasif <span class="badge ready">WAJIB</span></div>
+      <div class="toggle-btn">+</div>
+    </div>
+    <div class="card-content"><a class="btn" href="https://id.shp.ee/n4tVUGjq" target="_blank">BELI</a></div>
+  </div>
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div>Resistor 4,7K <span class="badge ready">WAJIB</span></div>
+      <div class="toggle-btn">+</div>
+    </div>
+    <div class="card-content">
+<a class="btn" href="https://shopee.co.id/4.7k-1206-%C2%B11-250mW-SMD-Thick-Film-Resistor-4.7k-4701-HKR-i.9011098.51205799297?extraParams=%7B%22display_model_id%22%3A370525330837%2C%22model_selection_logic%22%3A3%7D" target="_blank">BELI SMD</a>
+<a class="btn" href="https://id.shp.ee/qzKjXgsc" target="_blank">BELI</a></div>
+  </div>
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div>Resistor 470K <span class="badge ready">WAJIB</span></div>
+      <div class="toggle-btn">+</div>
+    </div>
+    <div class="card-content">
+<a class="btn" href="https://shopee.co.id/470k%CE%A9-1206-%C2%B11-250mW-Thick-Film-Resistor-SMD-200V-%C2%B1100ppm-%C2%B0C-470k-4703-RC1206FR-07470KL-YAGEO-i.9011098.29476264191"_blank">BELI SMD</a>
+<a class="btn" href="https://id.shp.ee/Kfgu7ao7" target="_blank">BELI</a></div>
+  </div>
+<div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div>Dioda 1N4148<span class="badge ready">WAJIB</span></div>
+      <div class="toggle-btn">+</div>
+    </div>
+    <div class="card-content"><a class="btn" href="https://shopee.co.id/1N4148-75V-500mW-Switching-Diode-IN4148-DO-35-LGE-ORIGINAL-i.9011098.17296761778?extraParams=%7B%22display_model_id%22%3A118244650854%2C%22model_selection_logic%22%3A3%7D" target="_blank">BELI</a></div>
+      </div>
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div>Kapasitor 100nF MKM/MKV <span class="badge ready">WAJIB</span> <span class="badge update">SALAH 1</span></div>
+      <div class="toggle-btn">+</div>
+    </div>
+    <div class="card-content">
+      <a class="btn" href="https://shopee.co.id/100nF-1206-250V-X7R-%C2%B110-SMD-MLCC-Capacitor-Walsin-1206B104K251CT-i.9011098.43328613295?extraParams=%7B%22display_model_id%22%3A405531589485%2C%22model_selection_logic%22%3A3%7D"_blank">BELI SMD</a>
+      <a class="btn" href="https://id.shp.ee/cn3WJhGn" target="_blank">BELI</a>
+      </div>
+  </div>
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div>Rshunt 0.01Ω <span class="badge ready">WAJIB</span> <span class="badge update">PENGGANTI R INA</span></div>
+      <div class="toggle-btn">+</div>
+    </div>
+    <div class="card-content">
+<p class="info-text" style="color: white; font-weight: 500;">✅ Resistor ini yang di gunakan untuk mengganti resistor pada modul INA3221, harus menggunakan resistor ini agar pembacaan kita semua sesuai dengan database pada software.</p>
+<a class="btn" href="https://shopee.co.id/10miliohm-2512-3W-%C2%B11-%C2%B150ppm-C-Current-Sensing-Shunt-Resistor-R010-0.01R-10mR-FOJAN-FPM253WFR010TM-i.9011098.47114678843?extraParams=%7B%22display_model_id%22%3A406260565034%2C%22model_selection_logic%22%3A3%7D" target="_blank">BELI</a></div>
+  </div>
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div>Resistor 7.5K (3 pcs) <span class="badge ready">WAJIB</span></div>
+      <div class="toggle-btn">+</div>
+    </div>
+    <div class="card-content">
+<a class="btn" href="https://shopee.co.id/7.5k%CE%A9-1206-%C2%B11-250mW-200V-%C2%B1100ppm-%E2%84%83-Thick-Film-Resistors-7.5K-7K5-7501-1206W4F7501T5E-UNI-ROYAL-i.9011098.25685133774?extraParams=%7B%22display_model_id%22%3A168374458668%2C%22model_selection_logic%22%3A3%7D" target="_blank">BELI SMD</a>
+<a class="btn" href="https://id.shp.ee/nfuFct8o" target="_blank">BELI</a></div>
+  </div>
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div>Resistor 30K (3 pcs) <span class="badge ready">WAJIB</span></div>
+      <div class="toggle-btn">+</div>
+    </div>
+    <div class="card-content">
+<a class="btn" href="https://shopee.co.id/30k-1206-%C2%B11-250mW-SMD-Thick-Film-Resistor-30kR-3002-VO-SCR1206F30K-i.9011098.19620658947?extraParams=%7B%22display_model_id%22%3A145100781537%2C%22model_selection_logic%22%3A3%7D" target="_blank">BELI SMD</a>
+<a class="btn" href="https://id.shp.ee/btxFv6k1" target="_blank">BELI</a></div>
+  </div>
+
+  <div class="footer">© 2026 R-PHONE | WaveID Project •</div>
+</div>
+
+<script>
+// FUNGSI DIPERBAIKI TOTAL, NAMA DIUBAH BIAR TIDAK TABRAK
+function toggleCard(el) {
+  // Tutup semua yang lain
+  document.querySelectorAll('.card').forEach(kotak => {
+    if (kotak !== el.closest('.card')) {
+      kotak.classList.remove('active');
+      kotak.querySelector('.toggle-btn').textContent = '+';
+    }
+  });
+  // Buka/tutup yang diklik
+  const kotakAktif = el.closest('.card');
+  const tombol = el.querySelector('.toggle-btn');
+  kotakAktif.classList.toggle('active');
+  tombol.textContent = kotakAktif.classList.contains('active') ? '−' : '+';
+}
+
+// Pencarian tetap aman
+document.getElementById('search').addEventListener('keyup', function() {
+  const cari = this.value.toLowerCase();
+  document.querySelectorAll('.card').forEach(kotak => {
+    kotak.style.display = kotak.textContent.toLowerCase().includes(cari) ? 'block' : 'none';
+  });
+});
+</script>
 </body>
 </html>
